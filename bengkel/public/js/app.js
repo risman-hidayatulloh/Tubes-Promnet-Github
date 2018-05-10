@@ -49997,13 +49997,161 @@ if (false) {
 
 /***/ }),
 /* 45 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'D:\\Kuliah\\Semester 4\\Pemrograman Internet\\Tugas\\TubesPromnet\\Tubes-Promnet-Github\\bengkel\\resources\\assets\\js\\components\\List.vue'");
+var disposed = false
+var normalizeComponent = __webpack_require__(12)
+/* script */
+var __vue_script__ = __webpack_require__(46)
+/* template */
+var __vue_template__ = __webpack_require__(47)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\List.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2a381f95", Component.options)
+  } else {
+    hotAPI.reload("data-v-2a381f95", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
 
 /***/ }),
-/* 46 */,
-/* 47 */,
+/* 46 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return { posts: '' };
+  },
+  created: function created() {
+    var _this = this;
+
+    var uri = 'http://127.0.0.1:8000/posts_mekanik';
+    Axios.get(uri).then(function (response) {
+      _this.posts = response.data;
+    });
+  }
+});
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("table", { staticClass: "table" }, [
+      _vm._m(1),
+      _vm._v(" "),
+      _c(
+        "tbody",
+        _vm._l(_vm.posts, function(post) {
+          return _c("tr", [
+            _c("td", [_vm._v(_vm._s(post.id_mekanik))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(post.kode_mekanik))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(post.nama_mekanik))])
+          ])
+        })
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "pull-right" }, [_c("br"), _c("br")])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("ID Mekanik")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Kode Mekanik")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Nama Mekanik")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "col-md-2" }, [_vm._v("Actions")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2a381f95", module.exports)
+  }
+}
+
+/***/ }),
 /* 48 */
 /***/ (function(module, exports) {
 

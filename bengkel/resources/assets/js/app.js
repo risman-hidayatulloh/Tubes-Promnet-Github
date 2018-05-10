@@ -10,8 +10,8 @@ window.Axios=require('axios').default;
 
 let AppLayout= require('./components/App.vue');
 
-
 const List = Vue.component('List',require('./components/List.vue'));
+
 
 //registring Modules
 Vue.use(VueRouter,VueAxios,axios);
