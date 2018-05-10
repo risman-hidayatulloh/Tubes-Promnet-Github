@@ -51,6 +51,7 @@
 
 
 <script>
+<<<<<<< HEAD:bengkel/resources/assets/js/components/List.vue
 export default {
   data: function(){
     return {posts: ''};
@@ -69,4 +70,24 @@ export default {
     }
   }
 }
+=======
+	export default{
+		data:function(){
+			return {posts:''};
+		},
+		created: function(){
+			let uri = 'http://127.0.0.1:8000/posts_mekanik/';
+			Axios.get(uri).then((response) => {
+				this.posts = response.data;
+			});
+		}
+		computed:{
+			filteredpost: function(){
+				if(this.posts.lenght){
+					return this.posts;
+				}
+			}
+		}
+	}
+>>>>>>> 1df75aa2dc71b3f64cf9ab49cdcf63fabf377e1d:bengkel/resources/assets/js/components/Mekanik.vue
 </script>

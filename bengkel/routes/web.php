@@ -13,5 +13,9 @@
 
 Route::get('/home', 'MekanikController@index')->name('home');
 Route::get('/', 'MekanikController@home');
-Route::resource('/posts', 'MekanikController');
+Route::resource('/posts_mekanik', 'MekanikController');
+
+Route::get('/home', 'JasaController@index')->name('home');
+Route::get('/', 'JasaController@home');
+Route::resource('/posts_jasa', 'JasaController');
 
