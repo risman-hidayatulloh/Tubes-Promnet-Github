@@ -11,16 +11,16 @@
 	<table class="table table-bordered">
 		<thead>
 			<tr>
-				<th>ID Mekanik</th>
-				<th>Kode Mekanik</th>
-				<th>Nama Mekanik</th>
+				<th>ID Jasa</th>
+				<th>Kode Jasa</th>
+				<th>Nama Jasa</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr v-for="post in filteredpost">
-				<td>{{post.id_mekanik}}</td>
-				<td>{{post.kode_mekanik}}</td>
-				<td>{{post.nama_mekanik}}</td>
+				<td>{{post.id_jasa}}</td>
+				<td>{{post.kode_jasa}}</td>
+				<td>{{post.nama_jasa}}</td>
 			</tr>
 		</tbody>
 	</table>
@@ -33,7 +33,7 @@
 			return {posts:''};
 		},
 		created: function(){
-			let uri = 'http://127.0.0.1:8000/posts_mekanik/';
+			let uri = 'http://127.0.0.1:8000/posts_jasa/';
 			Axios.get(uri).then((response) => {
 				this.posts = response.data;
 			});

@@ -14,7 +14,11 @@ class JasaController extends Controller
      */
     public function index()
     {
-        //
+        return Jasa::all();
+    }
+
+    public function home(){
+        return view('vueApp');
     }
 
     /**
