@@ -1,4 +1,3 @@
-//load masing masing library
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -9,10 +8,14 @@ window.VueAxios=require('vue-axios').default;
 
 window.Axios=require('axios').default;
 
-let AppLayout=require('./components/App.vue');
+let AppLayout= require('./components/App.vue');
 
-//penggilan masing masing template
-const List=Vue.component('List',require('./components/List.vue'));
+
+const List = Vue.component('List',require('./components/List.vue'));
+
+//registring Modules
+Vue.use(VueRouter,VueAxios,axios);
+
 
 
 //variabel utnuk penampung dekalrasi
@@ -25,14 +28,12 @@ const routes = [
 ]
 
 
-//registring Modules
-Vue.use(VueRouter,VueAxios,axios);
+const router = new VueRouter({ mode: 'history', routes: routes});
 
-const router = new VueRouter({mode : 'history' , routes : routes});
 
 new Vue(
-		Vue.util.extend(
-				{router}, AppLayout
-			)
-
-	).$mount('#app');
+ Vue.util.extend(
+ { router },
+ AppLayout
+ )
+).$mount('#app');
