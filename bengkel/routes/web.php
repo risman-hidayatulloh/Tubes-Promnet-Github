@@ -11,4 +11,7 @@
 |
 */
 
-Route::get('/', 'MekanikController@index');
+Route::get('/home', 'MekanikController@index')->name('home');
+Route::get('/', 'MekanikController@home');
+Route::resource('/posts', 'MekanikController');
+

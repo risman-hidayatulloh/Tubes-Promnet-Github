@@ -14,7 +14,11 @@ class MekanikController extends Controller
      */
     public function index()
     {
-        $data = Mekanik::all();
+        return Mekanik::all();
+    }
+
+    public function home(){
+        return view('vueApp');
     }
 
     /**
