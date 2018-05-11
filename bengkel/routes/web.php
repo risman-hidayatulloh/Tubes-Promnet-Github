@@ -19,3 +19,6 @@ Route::get('/home', 'JasaController@index')->name('home');
 Route::get('/', 'JasaController@home');
 Route::resource('/posts_jasa', 'JasaController');
 
+Route::get('/home', 'PartController@index')->name('home');
+Route::get('/', 'PartController@home');
+Route::resource('/posts_part', 'PartController');

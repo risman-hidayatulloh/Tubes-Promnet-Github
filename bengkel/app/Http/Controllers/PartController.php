@@ -14,7 +14,11 @@ class PartController extends Controller
      */
     public function index()
     {
-        //
+        return Part::all();
+    }
+
+    public function home(){
+        return view('vueApp');
     }
 
     /**
