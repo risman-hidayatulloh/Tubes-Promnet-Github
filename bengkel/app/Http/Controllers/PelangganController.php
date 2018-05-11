@@ -14,7 +14,11 @@ class PelangganController extends Controller
      */
     public function index()
     {
-        //
+        return Pelanggan::all();
+    }
+
+    public function home(){
+        return view('vueApp');
     }
 
     /**

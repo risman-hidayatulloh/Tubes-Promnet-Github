@@ -22,3 +22,7 @@ Route::resource('/posts_jasa', 'JasaController');
 Route::get('/home', 'PartController@index')->name('home');
 Route::get('/', 'PartController@home');
 Route::resource('/posts_part', 'PartController');
+
+Route::get('/home', 'PelangganController@index')->name('home');
+Route::get('/', 'PelangganController@home');
+Route::resource('/posts_pelanggan', 'PelangganController');
