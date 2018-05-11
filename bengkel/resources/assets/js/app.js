@@ -27,6 +27,16 @@ const routes = [
 	}
 ]
 
+//belum bisa manggil navbar nya
+/*const navbar = Vue.component('Navbar', require('./components/Navbar.vue'))
+const routes = [
+	{
+		name : 'Navbar',
+		path : '/',
+		component : Navbar
+	}
+]*/
+
 
 const router = new VueRouter({ mode: 'history', routes: routes});
 
@@ -37,3 +47,4 @@ new Vue(
  AppLayout
  )
 ).$mount('#app');
+
