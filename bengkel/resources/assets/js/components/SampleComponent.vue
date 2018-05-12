@@ -3,10 +3,9 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card text-black bg-primary mb-3">
-                    <div class="card-header"><h2>Header Example</h2></div>
-                        <div class="card bg-light mb-3">
-                            <h5 class="card-title">Example card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="card-header"><h2>Sample Component</h2></div>
+                        <div class="card text-black bg-light mb-3">
+                            Sample Hello {{ judul }}
                         </div>
                 </div>
             </div>
@@ -18,7 +17,12 @@
 <script>
     export default {
         mounted() {
-            console.log('Example Component mounted.')
+            console.log('Sample Component mounted.')
+        },
+        data(){
+            return{
+                judul: "Service Motor"
+            }
         }
     }
 </script>

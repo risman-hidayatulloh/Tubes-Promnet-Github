@@ -8,7 +8,7 @@ window.VueAxios=require('vue-axios').default;
 
 window.Axios=require('axios').default;
 
-let AppLayout= require('./components/App.vue');
+//let AppLayout= require('./components/App.vue');
 
 const List = Vue.component('List',require('./components/List.vue'));
 
@@ -17,26 +17,14 @@ const List = Vue.component('List',require('./components/List.vue'));
 Vue.use(VueRouter,VueAxios,axios);
 
 
-
+const example = require('./components/ExampleComponent.vue');
+const sample = require('./components/SampleComponent.vue');
 //variabel utnuk penampung dekalrasi
 const routes = [
-	{
-		name : 'List',
-		path : '/',
-		component : List
-	}
+	{ name : 'List', path : '/', component : List },
+	{ path: '/example', component: example },
+    { path: '/sample', component: sample },
 ]
-
-//belum bisa manggil navbar nya
-/*const navbar = Vue.component('Navbar', require('./components/Navbar.vue'))
-const routes = [
-	{
-		name : 'Navbar',
-		path : '/',
-		component : Navbar
-	}
-]*/
-
 
 const router = new VueRouter({ mode: 'history', routes: routes});
 
@@ -44,7 +32,7 @@ const router = new VueRouter({ mode: 'history', routes: routes});
 new Vue(
  Vue.util.extend(
  { router },
- AppLayout
+ //AppLayout
  )
 ).$mount('#app');
 
