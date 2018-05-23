@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('vueApp');
 });
 
+
+
 Route::get('/home', 'MekanikController@index')->name('home');
 Route::get('/', 'MekanikController@home');
 Route::resource('/posts_mekanik', 'MekanikController');
