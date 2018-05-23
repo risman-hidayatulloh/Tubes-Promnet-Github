@@ -1,100 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Login V2</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
-</head>
-<body>
-	
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<form class="login100-form validate-form">
-					<span class="login100-form-title p-b-26">
-						Welcome
-					</span>
-					<span class="login100-form-title p-b-48">
-						<i class="zmdi zmdi-font"></i>
-					</span>
+        <title>Changhong</title>
+        
+    </head>
+    <body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-						<input class="input100" type="text" name="email">
-						<span class="focus-input100" data-placeholder="Email"></span>
-					</div>
+    <nav class="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light">
+      <div class="container">
+        <a class="navbar-brand" href="<?php echo site_url('HomePage/index')?>">Changhong</a>
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#probootstrap-navbar" aria-controls="probootstrap-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span><i class="ion-navicon"></i></span>
+        </button>
+        <!-- <div class="collapse navbar-collapse" id="probootstrap-navbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#section-home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#section-features">Features</a></li>
+            <li class="nav-item"><a class="nav-link" href="#section-reviews">Reviews</a></li>
+            <li class="nav-item"><a class="nav-link" href="#section-pricing">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="#section-faq">FAQ</a></li>
+            <li class="nav-item cta-btn ml-xl-2 ml-lg-2 ml-md-0 ml-sm-0 ml-0"><a class="nav-link" href="#" target="_blank"><span class="pb_rounded-4 px-4">Get Started</span></a></li>
+          </ul>
+        </div> -->
+      </div>
+    </nav>
+    <!-- END nav -->
 
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="pass">
-						<span class="focus-input100" data-placeholder="Password"></span>
-					</div>
 
-					<div class="container-login100-form-btn">
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
-								Login
-							</button>
-						</div>
-					</div>
 
-					<div class="text-center p-t-115">
-						<span class="txt1">
-							Don’t have an account?
-						</span>
+    <div class="pb_cover_v3 overflow-hidden cover-bg-indigo cover-bg-opacity pb_gradient_v1 pb_slant-light">
+      <div class="container">
+        <br><br>
+        <br>
+          <div class="row">
+              <div class="col-md-offset-3 col-md-6">
+                <form action="<?php echo site_url('Register/Proses');?>" class="bg-white rounded pb_form_v1" method="post">
+                  <h2 class="mb-4 mt-0 text-center">Register</h2>
+                  <div class="form-group">
+                    <input type="text" class="form-control pb_height-50 reverse" name="username" placeholder="username" required="">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control pb_height-50 reverse" name="email" placeholder="email" required="">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control pb_height-50 reverse" name="password" placeholder="password" required="" onkeyup='check();'>
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control pb_height-50 reverse" name="password2" placeholder="re-password" required="" onkeyup='check();'>
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-lg btn-block pb_btn-pill btn-shadow-blue" value="Register" name="submit">
+                  </div>
+                </form>
+              </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <!-- END section -->
 
-						<a class="txt2" href="#">
-							Sign Up
-						</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	
 
-	<div id="dropDownSelect1"></div>
-	
-<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
+    <footer class="pb_footer bg-light" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <p class="pb_font-14">&copy; 2018 Changhong Forum Disscussion. <br> Template by UI Cookies &amp; Developed by </a> <small>(Jihad Nur Shibgatullah & Muhammad Faris Muzakki)</small></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- loader -->
+    <div id="pb_loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#1d82ff"/></svg></div>
 
-</body>
+
+
+    <script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
+    
+    <script src="<?php echo base_url();?>assets/js/popper.min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/slick.min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/jquery.mb.YTPlayer.min.js"></script>
+
+    <script src="<?php echo base_url();?>assets/js/jquery.waypoints.min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/jquery.easing.1.3.js"></script>
+
+    <script src="<?php echo base_url();?>assets/js/main.js"></script>
+
+    </body>
 </html>
+
+<script >
+function check(){
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'not matching';
+  }
+}
+</script>
