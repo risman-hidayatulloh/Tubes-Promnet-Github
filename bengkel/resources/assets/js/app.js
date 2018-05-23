@@ -8,7 +8,7 @@ window.VueAxios=require('vue-axios').default;
 
 window.Axios=require('axios').default;
 
-//let AppLayout= require('./components/App.vue');
+let AppLayout= require('./components/App.vue');
 
 const List = Vue.component('List',require('./components/List.vue'));
 
@@ -21,7 +21,7 @@ const example = require('./components/ExampleComponent.vue');
 const sample = require('./components/SampleComponent.vue');
 //variabel utnuk penampung dekalrasi
 const routes = [
-	{ name : 'List', path : '/', component : List },
+	{ name : 'List', path : '/mekanik', component : List },
 	{ path: '/example', component: example },
     { path: '/sample', component: sample },
 ]

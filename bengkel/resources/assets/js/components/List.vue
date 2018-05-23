@@ -2,7 +2,6 @@
 	<div class="row">
     <div class="pull-right">
       
-    </br></br>
     </div>
     <table class="table">
       <thead>
