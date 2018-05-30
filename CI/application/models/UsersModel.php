@@ -31,12 +31,6 @@
 			$this->db->from('users');
 			return $this->db->get();
 		}
-
-		public function tampil_data(){
-			$this->db->select('*');
-			$this->db->from('parts');
-			return $this->db->get();
-		}	
 	}
 
  ?>		

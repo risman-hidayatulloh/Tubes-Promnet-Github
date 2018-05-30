@@ -8,8 +8,10 @@
 			$this->db->insert('parts',$data);
 		}
 
-		public function gerData(){
-
+		public function getData(){
+			$this->db->select('*');
+			$this->db->from('parts');
+			return $this->db->get();
 		}
 
 

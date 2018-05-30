@@ -17,9 +17,9 @@
 		}
 
 		public function viewPembelian(){
-			$this->load->model('usersModel');
+			$this->load->model('PartsModel');
 
-			$data['user'] = $this->usersModel->tampil_data()->result();
+			$data['user'] = $this->PartsModel->getData();
 			$this->load->view('loader/header');
 			//$this->load->view('user/homeuser');
 			$this->load->view('user/pembelianuser');
