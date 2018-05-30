@@ -27,6 +27,33 @@
                         </div>
                     </nav>
                 </aside>
+                <aside class="col-12 col-sm-6">
+                    <table class="table table-hover table-striped table-light table-bordered" style="margin-top:20px">
+                        <thead>
+                          <tr>
+                            <th style="width:50px;text-align:center">No</th>
+                            <th>Kode Part</th>
+                            <th>Nama Part</th>
+                            <th style="width:130px">Action</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                            <!-- <?php 
+                                $no = 1;
+                                foreach($parts as $u){ 
+                                ?>
+                                <tr>
+                                    <td><?php echo $no++ ?></td>
+                                    <td><?php echo $u->kode_part ?></td>
+                                    <td><?php echo $u->nama_part ?></td>
+                                </tr>
+                            <?php } ?> -->
+
+                        </tbody>
+
+                    </table>
+                </aside>
                 <main class="col">
                 </main>
             </div>

@@ -14,6 +14,8 @@
 			$this->db->where('username',$data['username']);
 			$this->db->where('password',$data['password']);
 			return $this->db->get();
+
+			//$this->db->select('*')->from('users')->where('email', $data['email'])->get();
 		}
 
 		public function insertData($data){
@@ -29,6 +31,12 @@
 			$this->db->from('users');
 			return $this->db->get();
 		}
+
+		public function tampil_data(){
+			$this->db->select('*');
+			$this->db->from('parts');
+			return $this->db->get();
+		}	
 	}
 
  ?>		

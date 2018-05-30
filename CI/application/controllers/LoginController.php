@@ -14,8 +14,9 @@ class LoginController extends CI_Controller {
 	public function index()
 	{
 		$status['status'] = $this->status;
-		$this->load->view('loader/loadbootstrap');
+		$this->load->view('loader/header');
 		$this->load->view('loginview',$status);
+		$this->load->view('loader/footer');
 	}
 
 
