@@ -15,7 +15,6 @@
 			$this->db->where('password',$data['password']);
 			return $this->db->get();
 
-			//$this->db->select('*')->from('users')->where('email', $data['email'])->get();
 		}
 
 		public function insertData($data){

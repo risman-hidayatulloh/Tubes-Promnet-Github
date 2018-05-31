@@ -1,10 +1,10 @@
+    </head>
     <body>
         <nav class="navbar navbar-dark bg-dark">
             <center>
                 <h2 style="color: white;">Honda Service Center</h2>
             </center>
-        </nav>
-
+        </nav>  
         <div class="container-fluid h-100" style="margin: 0px;">
             <div class="row h-100">
                 <aside class="col-12 col-md-2 p-0 bg-dark">
@@ -12,16 +12,16 @@
                         <div class="collapse navbar-collapse">
                             <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                                 <li class="nav-item">
-                                    <a class="nav-link pl-0" href="<?php echo site_url('HomeUserController/viewPembelian') ?>">Pembelian</a>
+                                    <a class="nav-link pl-0" href="#">Data Pembelian</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link pl-0" href="#">Service</a>
+                                    <a class="nav-link pl-0" href="#">Data Service</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link pl-0" href="#">Pembayaran</a>
+                                    <a class="nav-link pl-0" href="#">Data Pembayaran</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link pl-0" href="<?php echo site_url('HomeUserController/logOut'); ?>">Logout</a>
+                                    <a class="nav-link pl-0" href="<?php echo site_url('HomeAdminController/logout'); ?>">Logout</a>
                                 </li>
                             </ul>
                         </div>
@@ -31,3 +31,5 @@
                 </main>
             </div>
         </div>
+    </body>
+</html>
