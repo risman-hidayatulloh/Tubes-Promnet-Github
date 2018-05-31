@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/loginview.css">
     <body class="text-center">
         <form class="form-signin"  method="post" action="<?php echo site_url('LoginController/ProsesLogin'); ?>">
@@ -18,6 +19,8 @@
             <p class="mt-5 mb-3 text-muted">Honda&copy; 2017-2018</p>
         </form>
 =======
+=======
+>>>>>>> parent of 9dd83ae... update tampilan login(+session), home user
         <title>Changhong</title>
         
     </head>
@@ -119,4 +122,7 @@ function check(){
   }
 }
 </script>
+<<<<<<< HEAD
+>>>>>>> parent of 9dd83ae... update tampilan login(+session), home user
+=======
 >>>>>>> parent of 9dd83ae... update tampilan login(+session), home user

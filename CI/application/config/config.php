@@ -24,7 +24,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 $config['base_url'] = 'http://localhost/Tubes-Promnet-Github/CI/';
+=======
+$config['base_url'] = '';
+>>>>>>> parent of 9dd83ae... update tampilan login(+session), home user
 =======
 $config['base_url'] = '';
 >>>>>>> parent of 9dd83ae... update tampilan login(+session), home user

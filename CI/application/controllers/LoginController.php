@@ -7,10 +7,15 @@ class LoginController extends CI_Controller {
 	public function index()
 	{
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$status['status'] = $this->status;
 		$this->load->view('loader/header');
 		$this->load->view('loginview',$status);
 		$this->load->view('loader/footer');
+=======
+		$this->load->view('loadbootstrap');
+		$this->load->view('loginview');
+>>>>>>> parent of 9dd83ae... update tampilan login(+session), home user
 =======
 		$this->load->view('loadbootstrap');
 		$this->load->view('loginview');
