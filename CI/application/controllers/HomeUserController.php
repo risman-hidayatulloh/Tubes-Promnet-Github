@@ -44,8 +44,34 @@
 
 		}
 
-		public function tambahPembelian(){
+		public function viewPembayaran(){
+			$this->cekUser();
 
+			$this->load->model('PembelianModel');
+			$data['data'] = $this->PembelianModel->getTmp()->result();
+			
+			$this->index();
+			$this->load->view('user/pembayaranview',$data);
+		}
+
+		public function tambahPembelian($id){
+			$this->cekUser();
+
+
+			$this->load->model('PembelianModel');
+			$data['id_part'] = $id;
+
+			$this->PembelianModel->tambahTmp($data);
+
+			$this->viewPembelian();
+		}
+
+		public function deletePembelian($id){
+			$this->cekUser();
+
+			$this->load->model('PembelianModel');
+			$this->PembelianModel->deleteTmp($id);
+			$this->viewPembayaran();
 		}
 
 		public function logOut(){
