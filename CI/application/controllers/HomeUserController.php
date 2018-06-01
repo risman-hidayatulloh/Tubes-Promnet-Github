@@ -24,24 +24,34 @@
 			$this->cekUser();
 			$this->load->view('loader/header');
 			$this->load->view('user/homeuser');
-			$this->load->view('loader/footer');
 		}
 
 		public function viewPembelian(){
 			$this->cekUser();
 			$this->load->model('PartsModel');
 
-			$data['user'] = $this->PartsModel->getData();
+			$data['data'] = $this->PartsModel->getData()->result();
 			$this->index();
-			$this->load->view('user/pembelianuser');
-		    
+			$this->load->view('user/pembelianview',$data);
+		}
+
+		public function viewService(){
+			$this->cekUser();
+
+			$this->index();
+			$this->load->view('user/serviceview');
+
+
+		}
+
+		public function tambahPembelian(){
+
 		}
 
 		public function logOut(){
 			$this->cekUser();
 
 			$this->session->sess_destroy();
-			$this->session->set_userdata($userdata);
 
 			redirect('LoginController');
 		}

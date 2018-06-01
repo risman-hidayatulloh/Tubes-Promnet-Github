@@ -9,9 +9,7 @@
 		}
 
 		public function getData(){
-			$this->db->select('*');
-			$this->db->from('parts');
-			return $this->db->get();
+			return $this->db->query('SELECT kode_part, nama_part, harga_ref_part from parts, href_parts WHERE parts.id_part = href_parts.id_part');
 		}
 
 

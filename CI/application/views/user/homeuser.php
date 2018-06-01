@@ -15,7 +15,7 @@
                                     <a class="nav-link pl-0" href="<?php echo site_url('HomeUserController/viewPembelian') ?>">Pembelian</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link pl-0" href="#">Service</a>
+                                    <a class="nav-link pl-0" href="<?php echo site_url('HomeUserController/viewService'); ?>">Service</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link pl-0" href="#">Pembayaran</a>
@@ -28,6 +28,4 @@
                     </nav>
                 </aside>
                 <main class="col">
-                </main>
-            </div>
-        </div>
+             
