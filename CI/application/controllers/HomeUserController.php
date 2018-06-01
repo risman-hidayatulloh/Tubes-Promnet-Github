@@ -35,6 +35,18 @@
 			$this->load->view('user/pembelianview',$data);
 		}
 
+		public function search(){
+			$this->load->model('PartsModel');
+			$nama_part = $this->input->post('search');
+
+			if (isset($nama_part) and !empty($nama_part)) {
+				$data['data'] = $this->PartsModel->search($nama_part);
+				$this->load->view('user/pembelianview',$data);
+			}else{
+				redirect($this->viewPembelian());
+			}
+		}
+
 		public function viewService(){
 			$this->cekUser();
 

@@ -8,15 +8,27 @@
 			$this->db->insert('parts',$data);
 		}
 
-<<<<<<< HEAD
 		public function getData(){
 			return $this->db->query('SELECT kode_part, nama_part, harga_ref_part from parts, href_parts WHERE parts.id_part = href_parts.id_part');
-=======
+		}
+
+		public function search($nama_part){
+			$this->db->select('*');
+			$this->db->form('parts');
+			$this->db->like('nama_part', $nama_part);
+			$query = $this->db->get();
+
+			if ($query->num_rows() > 0) {
+				return $query->result();
+			}else{
+				return $query->result();
+			}
+		}
+
 		public function getAll(){
 			$this->db->select('*');
 			$this->db->from('parts');
 			return $this->db->get();
->>>>>>> 5a15d0f35d2f79720ddc3f3771fbd5f9e261a4cb
 		}
 
 		public function getByIdPart($id_part){
