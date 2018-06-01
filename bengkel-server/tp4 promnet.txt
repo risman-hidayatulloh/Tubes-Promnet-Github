@@ -1,0 +1,13 @@
+------------
+TP Terakhir
+------------
+
+Buat sebuah aplikasi dengan 2 side, Server dan client. Buatlah sebuah CRUD data dari client ke server.
+
+- Server harus dihosting
+- Server menyediakan data
+- Client consume data
+- Harus bisa GET, POST, PUT, DELETE
+- UI bagus nilai ++
+
+2 Minggu (Rabu 9 Mei, 23:59:59).
