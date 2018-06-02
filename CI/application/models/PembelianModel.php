@@ -21,5 +21,8 @@
 			$this->db->delete('tmp_pembelian');
 		}
 		
+		function search($name_part){
+			return $this->db->query("SELECT parts.id_part,kode_part, nama_part, harga_ref_part from parts, href_parts WHERE parts.id_part = href_parts.id_part AND nama_part LIKE '%".$name_part."%'");
+		}
 	}
 ?>

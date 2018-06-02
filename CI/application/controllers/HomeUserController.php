@@ -54,6 +54,15 @@
 			$this->load->view('user/pembayaranview',$data);
 		}
 
+		public function search(){
+			$q = $this->input->post('cari');
+			$this->load->model('PembelianModel');
+			$data['data'] = $this->PembelianModel->search($q)->result();
+			$this->index();
+			$this->load->view('user/pembelianview', $data);
+
+		}
+
 		public function tambahPembelian($id){
 			$this->cekUser();
 
