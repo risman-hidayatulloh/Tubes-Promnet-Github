@@ -9,10 +9,9 @@
 		}
 
 		public function getData(){
-<<<<<<< HEAD
+
 			return $this->db->query('SELECT parts.id_part,kode_part, nama_part, harga_ref_part from parts, href_parts WHERE parts.id_part = href_parts.id_part');
-=======
-			return $this->db->query('SELECT kode_part, nama_part, harga_ref_part from parts, href_parts WHERE parts.id_part = href_parts.id_part');
+
 		}
 
 		public function search($nama_part){
@@ -32,7 +31,6 @@
 			$this->db->select('*');
 			$this->db->from('parts');
 			return $this->db->get();
->>>>>>> c8a3435c9157a80a428aed4376c3f0081556e118
 		}
 
 		public function getDatum($id_part){
