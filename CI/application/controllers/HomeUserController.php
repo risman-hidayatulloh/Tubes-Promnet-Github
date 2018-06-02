@@ -77,13 +77,57 @@
 		public function printPembayaran(){
 			include("assets/FPDF/fpdf.php");
 
-			$pdf = new FPDF('p','cm','A4');
+			/*$pdf = new FPDF('p','cm','A4');
 			$pdf->Addpage();
 			$pdf->AliasNbPages();
-
 			$pdf->SetFont('Arial','B','20');
 			$pdf->Cell(18,1,'Bukti Pembayaran',0,0,'C');
-			$pdf->Image('assets/lambang/honda.png',5,1,-300);
+			$pdf->Image('assets/lambang/honda.png',5,1,-300);*/
+
+			$pdf = new FPDF('l','mm','A5');
+	        // membuat halaman baru
+	        $pdf->AddPage();
+	        // setting jenis font yang akan digunakan
+	        $pdf->SetFont('Arial','B',14);
+	        // mencetak string 
+	        $pdf->Cell(190,7,'Bukti Pembayaran',0,1,'C');
+	        $pdf->Image('assets/lambang/honda.png',30,12,-150);
+	        $pdf->SetFont('Arial','B',12);
+	        $pdf->Cell(190,7,'Bandung Raya Motor ( PT. HONDA MOTOR )',0,1,'C');
+	        $pdf->SetFont('Arial','B',10);
+	        $pdf->Cell(190,5,'Jln. Dr. Setiabudi No. 157, Bandung',0,1,'C');
+	        $pdf->Cell(10,7,'',0,1);
+
+	        $pdf->Cell(100,7,'No. Faktur : ',0,0);
+	        $pdf->Cell(0,7,'Nama : ',0,1);
+	        $pdf->Cell(100,7,'Tanggal : ',0,0);
+	        $pdf->Cell(0,7,'Type/No. Pol : ',0,1);
+	        $pdf->Cell(100,7,'No. Kartu : ',0,0);
+	        $pdf->Cell(0,7,'Keterangan : ',0,1);
+	        $pdf->Cell(10,7,'',0,1);
+
+	        $pdf->Cell(100,7,'Rincian Pembelian',0,0);
+	        // Memberikan space kebawah agar tidak terlalu rapat
+	        $pdf->Cell(10,7,'',0,1);
+	        $pdf->SetFont('Arial','B',10);
+	        $pdf->Cell(10,6,'No',1,0,'C');
+	        $pdf->Cell(50,6,'Kode',1,0,'C');
+	        $pdf->Cell(70,6,'Keterangan',1,0,'C');
+	        $pdf->Cell(30,6,'Harga',1,1,'C');
+	        $pdf->SetFont('Arial','',10);
+	        $no = 1;
+	        $pembelian = $this->db->query('SELECT parts.id_part,kode_part,nama_part,harga_ref_part from tmp_pembelian,href_parts,parts where parts.id_part = tmp_pembelian.id_part and href_parts.id_part = tmp_pembelian.id_part')->result();
+	        //$pembelian = $this->db->get('detail_penjualan_parts')->result();
+	        foreach ($pembelian as $row){
+	        	$pdf->Cell(10,6,$no++,1,0, 'C');
+	            $pdf->Cell(50,6,$row->kode_part,1,0);
+	        	$pdf->Cell(70,6,$row->nama_part,1,0);
+	            $pdf->Cell(30,6,$row->harga_ref_part,1,1);
+	        }
+
+	        $pdf->SetFont('Arial','B',10);
+	        $pdf->Cell(130,7,'Total: ',0,1, 'R');
+
 
 			$pdf->Output();
 		}
