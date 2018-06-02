@@ -107,26 +107,6 @@
 	        $pdf->Cell(190,5,'Jln. Dr. Setiabudi No. 157, Bandung',0,1,'C');
 	        $pdf->Cell(10,7,'',0,1);
 
-	        $query2 = $this->db->query('SELECT * FROM pelanggans');
-			$row = $query2->row();
-			//echo $row->kode_pelanggan;
-			//$query2->free_result();
-
-	        $pdf->Cell(25,7,'Kode',0,0);
-	        $pdf->Cell(75,7,": $row->kode_pelanggan",0,0);
-	        $pdf->Cell(25,7,'Nama',0,0);
-	        $pdf->Cell(75,7,": $row->nama_pelanggan",0,1);
-
-	        $pdf->Cell(25,7,'Alamat',0,0);
-	        $pdf->Cell(75,7,": $row->alamat_pelanggan",0,0);
-	        $pdf->Cell(25,7,'Plat Nomor',0,0);
-	        $pdf->Cell(75,7,": $row->plat_nomor",0,1);
-
-	        $pdf->Cell(25,7,'No STNK',0,0);
-	        $pdf->Cell(75,7,": $row->no_stnk",0,1);
-	        
-	        $pdf->Cell(10,7,'',0,1);
-
 	        $pdf->Cell(100,7,'Rincian Pembelian',0,0);
 	        // Memberikan space kebawah agar tidak terlalu rapat
 	        $pdf->Cell(10,7,'',0,1);
@@ -148,6 +128,16 @@
 
 	        $pdf->SetFont('Arial','B',10);
 	        $pdf->Cell(130,7,'Total: ',0,1, 'R');
+
+	        $query2 = $this->db->query('SELECT * FROM mekaniks');
+			$row = $query2->row();
+			//echo $row->kode_pelanggan;
+			//$query2->free_result();
+
+	        $pdf->Cell(25,5,'Kode',0,0);
+	        $pdf->Cell(75,5,": $row->kode_mekanik",0,1);
+	        $pdf->Cell(25,5,'Mekanik',0,0);
+	        $pdf->Cell(75,5,": $row->nama_mekanik",0,1);
 
 
 			$pdf->Output();

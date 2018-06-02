@@ -27,7 +27,7 @@
 						<p>Total Bayar: Rp.<?php echo $total; ?></p>
 					</div>
 				</div>
-				<a href="<?php echo site_url('HomeUserController/printPembayaran'); ?>">print</a>
+				<a href="<?php echo site_url('HomeUserController/printPembayaran'); ?>" class="btn btn-success">print</a>
 
 
 			</main>
