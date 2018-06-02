@@ -35,18 +35,6 @@
 			$this->load->view('user/pembelianview',$data);
 		}
 
-		public function search(){
-			$this->load->model('PartsModel');
-			$nama_part = $this->input->post('search');
-
-			if (isset($nama_part) and !empty($nama_part)) {
-				$data['data'] = $this->PartsModel->search($nama_part);
-				$this->load->view('user/pembelianview',$data);
-			}else{
-				redirect($this->viewPembelian());
-			}
-		}
-
 		public function viewService(){
 			$this->cekUser();
 
@@ -84,6 +72,20 @@
 			$this->load->model('PembelianModel');
 			$this->PembelianModel->deleteTmp($id);
 			$this->viewPembayaran();
+		}
+
+		public function printPembayaran(){
+			include("assets/FPDF/fpdf.php");
+
+			$pdf = new FPDF('p','cm','A4');
+			$pdf->Addpage();
+			$pdf->AliasNbPages();
+
+			$pdf->SetFont('Arial','B','20');
+			$pdf->Cell(18,1,'Bukti Pembayaran',0,0,'C');
+			$pdf->Image('assets/lambang/honda.png',5,1,-300);
+
+			$pdf->Output();
 		}
 
 		public function logOut(){
