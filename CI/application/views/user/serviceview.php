@@ -1,5 +1,5 @@
 			<div class="row">
-				<form class="form-group" action="" method="post">
+				<form class="form-group" action="<?php echo site_url('HomeUserController/serviceAction'); ?>" method="post">
 					<div class="col-md-12">
 						<select class="form-control" name="jenis">
 							<option>Paket 1</option>
@@ -15,8 +15,16 @@
 					<table class="table table-hover">
 						<tbody>
 							<tr>
+								<td>Kode pelanggan</td>
+								<td><input type="text" name="kodepelanggan" class="form-control"></td>
+							</tr>
+							<tr>
 								<td>Nama Pemilik</td>
 								<td><input type="text" name="namapemilik" class="form-control"></td>
+							</tr>
+							<tr>
+								<td>Alamat pelanggan</td>
+								<td><input type="text" name="alamat" class="form-control"></td>
 							</tr>
 							<tr>
 								<td>No Polisi</td>
@@ -25,10 +33,6 @@
 							<tr>
 								<td>No STNK</td>
 								<td><input type="text" name="nostnk" class="form-control"></td>
-							</tr>
-							<tr>
-								<td>No Mesin</td>
-								<td><input type="text" name="nomesin" class="form-control"></td>
 							</tr>
 						</tbody>
 					</table>

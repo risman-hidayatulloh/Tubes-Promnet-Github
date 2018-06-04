@@ -21,15 +21,36 @@
 							<?php $i++; $total = $total + $item->harga_ref_part;} ?>
 						</tbody>
 					</table>
+				</div><br>
+				<?php if($pelanggan != null){ ?>
+				<div class="row">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Nama Pemilik</th>
+								<th>Alamat Pemilik</th>
+								<th>No Polisi</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach ($pelanggan as $tmp) {?>
+							<tr>
+								<td><?php echo $tmp->nama_pelanggan; ?></td>
+								<td><?php echo $tmp->alamat_pelanggan; ?></td>
+								<td><?php echo $tmp->plat_nomor; ?></td>
+							</tr>
+							<?php } ?>
+						</tbody>
+					</table>
 				</div>
+				<?php } ?>
 				<div class="row">
 					<div class="col-md-4">
 						<p>Total Bayar: Rp.<?php echo $total; ?></p>
 					</div>
 				</div>
 				<a href="<?php echo site_url('HomeUserController/printPembayaran'); ?>" class="btn btn-success">print</a>
-
-
+				<a href="<?php echo site_url('HomeUserController/bayar'); ?>" class="btn btn-primary">Bayar</a>
 			</main>
 		</div>
     </div>
