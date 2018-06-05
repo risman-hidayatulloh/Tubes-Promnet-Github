@@ -91,14 +91,43 @@
 		public function bayar(){
 			$this->cekUser();
 
+			//load model
 			$this->load->model('PembelianModel');
+			$this->load->model('ServiceModel');
+			$this->load->model('TransaksiModel');
+
+			$tmp1 = $this->PembelianModel->getTmp()->result();
+			$harga = 0;
+
+			foreach($tmp1 as $tmp){
+				$harga = $harga + $tmp->harga_ref_part;
+			}
+
+			$data = array(
+				'id_pelanggan' => 1,
+				'kode_transaksi' => md5(date("Y-m-d h:i:sa")),
+				'waktu' => date("Y-m-d h:i:sa"),
+				'bayar' =>  $harga
+			);
+
+			$this->TransaksiModel->addTransaksi($data);
+			
+			$lastidtransaksi = $this->TransaksiModel->getLastTransaksi()->row();
+
+			foreach($tmp1 as $tmp){
+				$transaksi = array(
+					'id_transaksi' => $lastidtransaksi->id_transaksi,
+					'id_part' => $tmp->id_part
+				);
+				$this->TransaksiModel->addDetailTransaksi($transaksi);
+			}
+			
+
 
 			$this->PembelianModel->truncate();
 
-			$this->load->model('ServiceModel');
-
 			$this->ServiceModel->truncateTmp();
-
+			
 			$this->viewPembayaran();
 
 		}
@@ -109,7 +138,6 @@
 			$data['data'] = $this->PembelianModel->search($q)->result();
 			$this->index();
 			$this->load->view('user/pembelianview', $data);
-
 		}
 
 		public function tambahPembelian($id){
@@ -150,6 +178,7 @@
 	        $pdf->Cell(10,7,'',0,1);
 
 	        $pdf->Cell(100,7,'Rincian Pembelian',0,0);
+	        $pdf->Cell(100,7,date("Y-m-d h:i:sa"),0,9);
 	        // Memberikan space kebawah agar tidak terlalu rapat
 	        $pdf->Cell(10,7,'',0,1);
 	        $pdf->SetFont('Arial','B',10);
