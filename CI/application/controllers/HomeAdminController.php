@@ -66,7 +66,7 @@
 			$this->cekUser();
 			
 			$this->load->view('global/loadbootstrap');
-			$this->load->view('global/header');
+			//$this->load->view('global/header');
 			$this->load->view('admin/homeadmin');
 			$this->load->view('global/footer');
 		}

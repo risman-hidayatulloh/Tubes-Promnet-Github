@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
         <link rel="stylesheet" href="<?php echo base_url();?>assets/css/landing-2.css"> -->
 		
+		<!-- Bootstrap Baru Tampilan Warna Merah -->
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<!-- Bootstrap Core CSS -->
 		<link rel="stylesheet" href="<?php echo base_url();?>asset/css/bootstrap.min.css">

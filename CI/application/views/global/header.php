@@ -1,16 +1,20 @@
-	<div class="sidebar-menu">
-		<header class="logo1">
-			<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> 
-		</header>
-		<div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
-            <div class="menu">
-				<ul id="menu" >
-					<li><a href="<?php echo site_url('HomeUserController'); ?>"><i class="lnr lnr-home"></i> <span>Home</span></a></li>
-					<li><a href="<?php echo site_url('HomeUserController/viewPembelian'); ?>"><i class="lnr lnr-chart-bars"></i> <span>Pembelian</span></a></li>
-					<li><a href="<?php echo site_url('HomeUserController/viewService'); ?>"><i class="lnr lnr-book"></i> <span>Service</span></a></li>
-					<li><a href="<?php echo site_url('HomeUserController/viewPembayaran'); ?>"><i class="lnr lnr-cart"></i> <span>Pembayaran</span></a></li>
-					<li><a href="<?php echo site_url('HomeUserController/logOut'); ?>"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        
+        <link href="<?php echo base_url();?>https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/fonts/ionicons/css/ionicons.min.css">
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/fonts/law-icons/font/flaticon.css">
+
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/fonts/fontawesome/css/font-awesome.min.css">
+        
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/css/slick.css">
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/css/slick-theme.css">
+
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/css/helpers.css">
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/css/landing-2.css">
