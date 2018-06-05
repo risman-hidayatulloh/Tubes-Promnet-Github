@@ -19,6 +19,49 @@
 			}
 		}
 
+		public function viewDataBayar(){
+			$this->cekUser();
+
+			//load model
+			$this->load->model('TransaksiModel');
+
+			$data['data'] = $this->TransaksiModel->getAllTransaksi()->result();
+
+			$this->index();
+			$this->load->view('admin/datapembayaranview',$data);
+			
+
+		}
+
+		public function filterDataBayar(){
+			$this->cekUser();
+
+			$filter = $this->input->post('berdasarkan');
+
+			if($filter == "Transaksi"){
+				$this->viewDataBayar();
+			}else{
+
+				if($filter == 'Tanggal'){
+					$filter = 'DAY';
+				}else if($filter == 'Bulan'){
+					$filter = 'MONTH';
+				}else{
+					$filter = 'YEAR';
+				}
+
+				$this->load->model('TransaksiModel');
+				$data['data'] = $this->TransaksiModel->getFilterTransaksi($filter)->result();
+
+				$this->index();
+				$this->load->view('admin/datapembayaranview',$data);
+
+			}
+
+
+
+		}
+
 		public function index(){
 			$this->cekUser();
 			

@@ -21,5 +21,15 @@
 			return $this->db->query('select *from transaksis order by id_transaksi desc limit 1');
 		}
 
+		function getAllTransaksi(){
+			$this->db->select('*');
+			$this->db->from('transaksis');
+			return $this->db->get();
+		}
+
+		function getFilterTransaksi($filter){
+			return $this->db->query('select *from transaksis group by '.$filter.'(waktu)');
+		}
+
 	}
 ?>
