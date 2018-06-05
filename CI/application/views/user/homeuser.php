@@ -1,31 +1,33 @@
-    <body>
-        <nav class="navbar navbar-dark bg-dark">
-            <center>
-                <h2 style="color: white;">Honda Service Center</h2>
-            </center>
-        </nav>
-
-        <div class="container-fluid h-100">
-            <div class="row h-100">
-                <aside class="col-12 col-md-2 p-0 bg-dark">
-                    <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start">
-                        <div class="collapse navbar-collapse">
-                            <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
-                                <li class="nav-item">
-                                    <a class="nav-link pl-0" href="<?php echo site_url('HomeUserController/viewPembelian') ?>">Pembelian</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link pl-0" href="<?php echo site_url('HomeUserController/viewService'); ?>">Service</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link pl-0" href="<?php echo site_url('HomeUserController/viewPembayaran'); ?>">Pembayaran</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link pl-0" href="<?php echo site_url('HomeUserController/logOut'); ?>">Logout</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </aside>
-                <main class="col">
-             
+<div class="left-content">
+	<div class="inner-content">
+		<!-- header-starts -->
+		<div class="header-section">
+			<!-- top_bg -->
+			<div class="top_bg">
+				<div class="header_top">
+					<div class="top_right">
+						<ul>
+							<li><a href="#">help</a></li>|
+							<li><a href="#">Contact</a></li>|
+							<li><a href="#">Delivery information</a></li>
+						</ul>
+					</div>
+					<div class="top_left">
+						<h2><span></span> Call us : 012 3456 789</h2>
+					</div> <div class="clearfix"> </div>
+				</div>
+			</div><div class="clearfix"></div>
+			<!-- /top_bg -->
+			</div>
+			<div class="header_bg">
+				<div class="header">
+					<div class="head-t">
+						<div class="row">
+							<img src="<?php echo base_url('assets/lambang/honda.png'); ?>" class="img-responsive" alt="">
+						</div>
+					</div>
+				</div>			
+			</div>
+		<!-- //header-ends -->
+		</div>
+	</div>

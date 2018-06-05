@@ -1,6 +1,10 @@
+<div class="left-content">
+	<!--content-->
+	<div class="content">
+		<div class="women_main">
 			<div class="row">
 				<form class="form-group" action="<?php echo site_url('HomeUserController/serviceAction'); ?>" method="post">
-					<div class="col-md-12">
+					<div class="col-md-3">
 						<select class="form-control" name="jenis">
 							<option>Paket 1</option>
 							<option>Paket 2</option>

@@ -22,8 +22,10 @@
 
 		public function index(){
 			$this->cekUser();
-			$this->load->view('loader/header');
+			$this->load->view('global/loadbootstrap');
+			$this->load->view('global/header');
 			$this->load->view('user/homeuser');
+			$this->load->view('global/footer');
 		}
 
 		public function viewPembelian(){
