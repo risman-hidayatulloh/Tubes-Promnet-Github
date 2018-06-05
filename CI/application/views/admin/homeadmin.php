@@ -1,3 +1,10 @@
+        <script src=" <?php echo base_url('chartjs/Chart.bundle.js'); ?> "></script>
+          <style type="text/css">
+            .container {
+                width: 50%;
+                margin: 15px auto;
+            }
+        </style>
     </head>
     <body>
         <nav class="navbar navbar-dark bg-dark">
@@ -18,7 +25,7 @@
                                     <a class="nav-link pl-0" href="#">Data Service</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link pl-0" href="#">Data Pembayaran</a>
+                                    <a class="nav-link pl-0" href="<?php echo site_url('HomeAdminController/viewDataBayar'); ?>">Data Pembayaran</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link pl-0" href="<?php echo site_url('HomeAdminController/logout'); ?>">Logout</a>
@@ -28,8 +35,3 @@
                     </nav>
                 </aside>
                 <main class="col">
-                </main>
-            </div>
-        </div>
-    </body>
-</html>
