@@ -1,3 +1,7 @@
+<div class="left-content">
+	<!--content-->
+	<div class="content">
+		<div class="women_main">
 			 <div class="row">
 			 	<div class="col-md-3">
 					<form class="form-group" action="<?php echo site_url('HomeAdminController/filterDataBayar'); ?>" method="post">

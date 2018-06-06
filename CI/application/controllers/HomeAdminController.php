@@ -65,8 +65,10 @@
 		public function index(){
 			$this->cekUser();
 			
-			$this->load->view('loader/loadbootstrap');
+			$this->load->view('global/loadbootstrap');
+			//$this->load->view('global/header');
 			$this->load->view('admin/homeadmin');
+			$this->load->view('global/footer');
 		}
 
 		public function logout(){

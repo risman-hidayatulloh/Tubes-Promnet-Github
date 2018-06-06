@@ -26,9 +26,8 @@ class LoginController extends CI_Controller {
 		$this->cekUser();
 
 		$status['status'] = $this->status;
-		$this->load->view('loader/header');
+		$this->load->view('global/loadbootstrap');
 		$this->load->view('loginview',$status);
-		$this->load->view('loader/footer');
 	}
 
 

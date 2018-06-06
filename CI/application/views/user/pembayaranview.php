@@ -1,3 +1,7 @@
+<div class="left-content">
+	<!--content-->
+	<div class="content">
+		<div class="women_main">
 				<div class="row">
 					<table class="table table-hover">
 						<thead>
