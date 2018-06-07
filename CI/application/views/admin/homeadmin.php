@@ -15,7 +15,7 @@
         <div class="menu">
 			<ul id="menu" >
 				<li><a href="<?php echo site_url('HomeAdminController'); ?>"><i class="lnr lnr-home"></i> <span>Home</span></a></li>
-				<li><a href=""><i class="lnr lnr-chart-bars"></i> <span>Data Pembelian</span></a></li>
+				<li><a href=""><i class="lnr lnr-chart-bars"></i> <span>Data Penjualan</span></a></li>
 				<li><a href=""><i class="lnr lnr-book"></i> <span>Data Service</span></a></li>
 				<li><a href="<?php echo site_url('HomeAdminController/viewDataBayar'); ?>"><i class="lnr lnr-cart"></i> <span>Data Pembayaran</span></a></li>
 				<li><a href="<?php echo site_url('HomeAdminController/logOut'); ?>"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>

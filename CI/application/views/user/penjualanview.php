@@ -38,7 +38,7 @@
 								<td><?php echo $item->nama_part; ?></td>
 								<td><?php echo $item->harga_ref_part; ?></td>
 								<td></td>
-								<td><a href="<?php echo site_url('HomeUserController/tambahPembelian/'.$item->id_part); ?>" class="btn btn-primary">Beli</a></td>
+								<td><a href="<?php echo site_url('HomeUserController/tambahPenjualan/'.$item->id_part); ?>" class="btn btn-primary">Beli</a></td>
 							</tr>
 						<?php $i++;} ?>
 					</tbody>

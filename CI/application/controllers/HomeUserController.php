@@ -27,13 +27,13 @@
 			$this->load->view('global/footer');
 		}
 
-		public function viewPembelian(){
+		public function viewPenjualan(){
 			$this->cekUser();
 			$this->load->model('PartsModel');
 
 			$data['data'] = $this->PartsModel->getData()->result();
 			$this->index();
-			$this->load->view('user/pembelianview',$data);
+			$this->load->view('user/penjualanview',$data);
 		}
 
 		public function viewService(){
@@ -66,10 +66,10 @@
 				$id = 13;
 			}
 
-			$this->load->model('PembelianModel');
+			$this->load->model('PenjualanModel');
 			$data['id_part'] = $id;
 
-			$this->PembelianModel->tambahTmp($data);
+			$this->PenjualanModel->tambahTmp($data);
 
 			$this->viewService();
 
@@ -78,8 +78,8 @@
 		public function viewPembayaran(){
 			$this->cekUser();
 
-			$this->load->model('PembelianModel');
-			$data['data'] = $this->PembelianModel->getTmp()->result();
+			$this->load->model('PenjualanModel');
+			$data['data'] = $this->PenjualanModel->getTmp()->result();
 			
 			$this->load->model('ServiceModel');
 			$data['pelanggan'] = $this->ServiceModel->getTmp()->result();
@@ -93,11 +93,11 @@
 			$this->cekUser();
 
 			//load model
-			$this->load->model('PembelianModel');
+			$this->load->model('PenjualanModel');
 			$this->load->model('ServiceModel');
 			$this->load->model('TransaksiModel');
 
-			$tmp1 = $this->PembelianModel->getTmp()->result();
+			$tmp1 = $this->PenjualanModel->getTmp()->result();
 			$harga = 0;
 
 			foreach($tmp1 as $tmp){
@@ -125,7 +125,7 @@
 			
 
 
-			$this->PembelianModel->truncate();
+			$this->PenjualanModel->truncate();
 
 			$this->ServiceModel->truncateTmp();
 			
@@ -135,29 +135,29 @@
 
 		public function search(){
 			$q = $this->input->post('cari');
-			$this->load->model('PembelianModel');
-			$data['data'] = $this->PembelianModel->search($q)->result();
+			$this->load->model('PenjualanModel');
+			$data['data'] = $this->PenjualanModel->search($q)->result();
 			$this->index();
-			$this->load->view('user/pembelianview', $data);
+			$this->load->view('user/penjualanview', $data);
 		}
 
-		public function tambahPembelian($id){
+		public function tambahPenjualan($id){
 			$this->cekUser();
 
 
-			$this->load->model('PembelianModel');
+			$this->load->model('PenjualanModel');
 			$data['id_part'] = $id;
 
-			$this->PembelianModel->tambahTmp($data);
+			$this->PenjualanModel->tambahTmp($data);
 
-			$this->viewPembelian();
+			$this->viewPenjualan();
 		}
 
-		public function deletePembelian($id){
+		public function deletePenjualan($id){
 			$this->cekUser();
 
-			$this->load->model('PembelianModel');
-			$this->PembelianModel->deleteTmp($id);
+			$this->load->model('PenjualanModel');
+			$this->PenjualanModel->deleteTmp($id);
 			$this->viewPembayaran();
 		}
 
@@ -178,7 +178,7 @@
 	        $pdf->Cell(190,5,'Jln. Dr. Setiabudi No. 157, Bandung',0,1,'C');
 	        $pdf->Cell(10,7,'',0,1);
 
-	        $pdf->Cell(100,7,'Rincian Pembelian',0,0);
+	        $pdf->Cell(100,7,'Rincian Penjualan',0,0);
 	        $pdf->Cell(100,7,date("Y-m-d h:i:sa"),0,9);
 	        // Memberikan space kebawah agar tidak terlalu rapat
 	        $pdf->Cell(10,7,'',0,1);
@@ -189,9 +189,9 @@
 	        $pdf->Cell(30,6,'Harga',1,1,'C');
 	        $pdf->SetFont('Arial','',10);
 	        $no = 1;
-	        $pembelian = $this->db->query('SELECT parts.id_part,kode_part,nama_part,harga_ref_part from tmp_pembelian,href_parts,parts where parts.id_part = tmp_pembelian.id_part and href_parts.id_part = tmp_pembelian.id_part')->result();
-	        //$pembelian = $this->db->get('detail_penjualan_parts')->result();
-	        foreach ($pembelian as $row){
+	        $penjualan = $this->db->query('SELECT parts.id_part,kode_part,nama_part,harga_ref_part from tmp_pembelian,href_parts,parts where parts.id_part = tmp_pembelian.id_part and href_parts.id_part = tmp_pembelian.id_part')->result();
+	        //$penjualan = $this->db->get('detail_penjualan_parts')->result();
+	        foreach ($penjualan as $row){
 	        	$pdf->Cell(10,6,$no++,1,0, 'C');
 	            $pdf->Cell(50,6,$row->kode_part,1,0);
 	        	$pdf->Cell(70,6,$row->nama_part,1,0);
@@ -202,7 +202,7 @@
 
 	        $totalbayar = 0;
 
-	        foreach($pembelian as $tmp){
+	        foreach($penjualan as $tmp){
 	        	$totalbayar = $totalbayar + $tmp->harga_ref_part;
 	        }
 

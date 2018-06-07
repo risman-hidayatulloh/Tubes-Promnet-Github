@@ -1,7 +1,7 @@
 <?php 
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
-	class PembelianModel extends CI_Model {
+	class PenjualanModel extends CI_Model {
 
 		function __construct(){
 			parent::__construct();
