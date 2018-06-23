@@ -4,7 +4,7 @@
 		<div class="women_main">
 			 <div class="row">
 			 	<div class="col-md-3">
-					<form class="form-group" action="<?php echo site_url('HomeAdminController/filterDataBayar'); ?>" method="post">
+					<form class="form-group" action="<?php echo site_url('HomeAdminController/viewDataServiceFiltered'); ?>" method="post">
 				 		<label>Berdasarkan</label>
 				 			<select class="form-control" name="berdasarkan">
 				 				<option>Transaksi</option>
@@ -67,8 +67,6 @@
 	                }
 	            });
 	        </script>
-
-
 			</main>
 		</div>
     </div>

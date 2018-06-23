@@ -20,7 +20,7 @@
 								<td><?php echo $item->kode_part; ?></td>
 								<td><?php echo $item->nama_part; ?></td>
 								<td><?php echo $item->harga_ref_part; ?></td>
-								<td><a href="<?php echo site_url('HomeUserController/deletePenjualan/'.$item->id_part); ?>" class="btn btn-danger">delete</a></td>
+								<td><a href="<?php echo site_url('HomeUserController/deletePembelian/'.$item->id_part); ?>" class="btn btn-danger">delete</a></td>
 							</tr>
 							<?php $i++; $total = $total + $item->harga_ref_part;} ?>
 						</tbody>

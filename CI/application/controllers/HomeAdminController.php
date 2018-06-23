@@ -58,8 +58,82 @@
 
 			}
 
+		}
 
+		public function viewDataService(){
+			$this->cekUser();
 
+			$this->load->model('ServiceModel');
+
+			$data['data'] = $this->ServiceModel->getService()->result();
+
+			$this->index();
+			$this->load->view('admin/dataserviceview',$data);
+
+		}
+
+		public function viewDataServiceFiltered(){
+			$this->cekUser();
+
+			$filter = $this->input->post('berdasarkan');
+
+			if($filter == 'Transaksi'){
+				$this->viewDataService();
+			}else{
+
+				if($filter == 'Tanggal'){
+					$filter = 'DAY';
+				}else if($filter == 'Bulan'){
+					$filter = 'MONTH';
+				}else{
+					$filter = 'YEAR';
+				}
+
+				$this->load->model('ServiceModel');
+				$data['data'] = $this->ServiceModel->getServiceFiltered($filter)->result();
+
+				$this->index();
+				$this->load->view('admin/dataserviceview',$data);
+			}
+
+		}
+
+		public function viewDataPembelian(){
+			$this->cekUser();
+
+			$this->load->model('PembelianModel');
+
+			$data['data'] = $this->PembelianModel->getPembelian()->result();
+
+			$this->index();
+
+			$this->load->view('admin/datapembelianview',$data);
+
+		}
+
+		public function viewDataPembelianFiltered(){
+			$this->cekUser();
+
+			$filter = $this->input->post('berdasarkan');
+
+			if($filter == 'Transaksi'){
+				$this->viewDataPembelian();
+			}else{
+
+				if($filter == 'Tanggal'){
+					$filter = 'DAY';
+				}else if($filter == 'Bulan'){
+					$filter = 'MONTH';
+				}else{
+					$filter = 'YEAR';
+				}
+
+				$this->load->model('PembelianModel');
+				$data['data'] = $this->PembelianModel->getPembelianFiltered($filter)->result();
+
+				$this->index();
+				$this->load->view('admin/datapembelianview',$data);
+			}
 		}
 
 		public function index(){
