@@ -24,6 +24,8 @@
 			}else{
 				return $query->result();
 			}
+
+		
 		}
 
 		public function getAll(){

@@ -3,10 +3,18 @@
 
 	class HomeUserController extends CI_Controller{
 
+		var $current = array(
+			'home' => null,
+			'penjualan' => null,
+			'service' => null,
+			'pembayaran' => null,
+			'logout' => null
+		);
 
 		//kosntruktor
 		function __construct(){
 			parent::__construct();
+			$this->load->helper('array');
 		}
 
 		//cek user
@@ -22,8 +30,11 @@
 
 		public function index(){
 			$this->cekUser();
+
+			$data['status'] = $this->current;
+
 			$this->load->view('global/loadbootstrap');
-			$this->load->view('user/homeuser');
+			$this->load->view('user/homeuser',$data);
 			$this->load->view('global/footer');
 		}
 
@@ -32,12 +43,17 @@
 			$this->load->model('PartsModel');
 
 			$data['data'] = $this->PartsModel->getData()->result();
+			
+			$this->current['penjualan'] = 'active';
+
 			$this->index();
 			$this->load->view('user/pembelianview',$data);
 		}
 
 		public function viewService(){
 			$this->cekUser();
+
+			$this->current['service'] = 'active';
 
 			$this->index();
 			$this->load->view('user/serviceview');
@@ -80,6 +96,8 @@
 
 			$this->load->model('PembelianModel');
 			$data['data'] = $this->PembelianModel->getTmp()->result();
+
+			$this->current['pembayaran'] = 'active';
 			
 			$this->load->model('ServiceModel');
 			$data['pelanggan'] = $this->ServiceModel->getTmp()->result();
