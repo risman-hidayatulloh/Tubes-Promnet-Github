@@ -140,7 +140,9 @@
 					'id_transaksi' => $lastidtransaksi->id_transaksi,
 					'id_part' => $tmp->id_part
 				);
-				$this->TransaksiModel->addDetailTransaksi($transaksi);
+				for($i=0; $i<$tmp->jumlah; $i++){
+					$this->TransaksiModel->addDetailTransaksi($transaksi);
+				}
 			}
 			
 
@@ -151,6 +153,15 @@
 			
 			$this->viewPembayaran();
 
+		}
+
+		public function deleteTransaksi($id){
+			$this->cekUser();
+			
+
+
+
+			$this->index();
 		}
 
 		public function search(){
@@ -257,6 +268,16 @@
 
 			$this->index();
 			$this->load->view('user/transaksiview',$data);
+		}
+
+		public function detailTransaksi($id){
+			$this->cekUser();
+			$this->load->model('TransaksiModel');
+
+			$data['data'] = $this->TransaksiModel->getDetailTransaksi($id)->result();
+
+			$this->index();
+			$this->load->view('user/detailtransaksiview',$data);
 		}
 
 		public function logOut(){

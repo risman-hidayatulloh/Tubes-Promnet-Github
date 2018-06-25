@@ -93,6 +93,7 @@
 								<th>Nama Barang</th>
 								<th>Harga</th>
 								<th>Jumlah</th>
+								<th>Total</th>
 								<th>Aksi</th>
 							</tr>
 						</thead>
@@ -104,9 +105,10 @@
 								<td><?php echo $item->nama_part; ?></td>
 								<td><?php echo $item->harga_ref_part; ?></td>
 								<td><?php echo $item->jumlah; ?></td>
+								<td><?php echo $item->harga_ref_part*$item->jumlah; ?></td>
 								<td><a href="<?php echo site_url('HomeUserController/deletePembelian/'.$item->id_part); ?>" class="btn btn-danger">delete</a></td>
 							</tr>
-							<?php $i++; $total = $total + $item->harga_ref_part;} ?>
+							<?php $i++; $total = $total + $item->harga_ref_part*$item->jumlah;} ?>
 						</tbody>
 					</table>
 				</div><br>

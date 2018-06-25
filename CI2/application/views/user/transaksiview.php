@@ -11,7 +11,7 @@
 							<th>Kode Transaksi</th>
 							<th>Tanggal</th>
 							<th>Total Harga</th>
-							<!-- <th>Aksi</th> -->
+							<th>Aksi</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -21,7 +21,10 @@
 								<td><?php echo $item->kode_transaksi; ?></td>
 								<td><?php echo $item->waktu; ?></td>
 								<td><?php echo $item->bayar; ?></td>
-								<!-- <td><a href="" class="btn btn-success">Print</a></td> -->
+								<td><a href="<?php echo site_url('HomeUserController/detailTransaksi/'.$item->id_transaksi) ?>" class="btn btn-success">Detail</a>
+									<a href="<?php echo site_url('HomeUserController/deleteTransaksi/'.$item->id_transaksi)" class="btn btn-danger">Delete</a>
+								</td>
+								
 							</tr>
 						<?php $i++;} ?>
 					</tbody>

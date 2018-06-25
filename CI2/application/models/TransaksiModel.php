@@ -31,5 +31,9 @@
 			return $this->db->query('select *from transaksis group by '.$filter.'(waktu)');
 		}
 
+		function getDetailTransaksi($id){
+			return $this->db->query('select detail_transaksi.id_transaksi, parts.nama_part, href_parts.harga_ref_part, count(detail_transaksi.id_part) as jumlah from detail_transaksi,parts,href_parts where detail_transaksi.id_part = parts.id_part and parts.id_part = href_parts.id_part and detail_transaksi.id_transaksi ='.$id.' group by detail_transaksi.id_part');
+		}
+
 	}
 ?>
