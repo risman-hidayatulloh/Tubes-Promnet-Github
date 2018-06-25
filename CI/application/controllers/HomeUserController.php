@@ -8,6 +8,7 @@
 			'penjualan' => null,
 			'service' => null,
 			'pembayaran' => null,
+			'transaksi' => null,
 			'logout' => null
 		);
 
@@ -239,6 +240,18 @@
 
 
 			$pdf->Output();
+		}
+
+		public function viewTransaksi(){
+			$this->cekUser();
+			$this->load->model('TransaksiModel');
+
+			$data['data'] = $this->TransaksiModel->getAllTransaksi()->result();
+			
+			$this->current['transaksi'] = 'active';
+
+			$this->index();
+			$this->load->view('user/transaksiview',$data);
 		}
 
 		public function logOut(){
