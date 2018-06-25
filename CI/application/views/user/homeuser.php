@@ -9,7 +9,7 @@
 				<li class="<?php echo element('penjualan',$status);?>"><a href="<?php echo site_url('HomeUserController/viewPembelian'); ?>"><i class="lnr lnr-chart-bars "></i> <span>Penjualan</span></a></li>
 				<li class="<?php echo element('service',$status);?>"><a href="<?php echo site_url('HomeUserController/viewService'); ?>"><i class="lnr lnr-book"></i> <span>Service</span></a></li>
 				<li class="<?php echo element('pembayaran',$status);?>"><a href="<?php echo site_url('HomeUserController/viewPembayaran'); ?>"><i class="lnr lnr-cart"></i> <span>Pembayaran</span></a></li>
-				<li class="<?php echo element('transaksi',$status);?>"><a href="<?php echo site_url('HomeUserController/viewTransaksi'); ?>"><i class="lnr lnr-pencil"></i> <span>Transaksi</span></a></li>
+				<li class="<?php echo element('transaksi',$status);?>"><a href="<?php echo site_url('HomeUserController/viewTransaksi'); ?>"><i class="lnr lnr-pencil"></i> <span>Laporan Transaksi</span></a></li>
 				<li class="<?php echo element('logout',$status);?>"><a href="<?php echo site_url('HomeUserController/logOut'); ?>"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 			</ul>
 		</div>
