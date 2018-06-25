@@ -10,7 +10,7 @@
 							<div class="col-md-9">
 								<input type="text" name="cari" placeholder="cari" class="form-control">
 							</div>
-							<div class="col-md-1">
+							<div class="col-md-2">
 								<input type="submit" name="submit" value="">
 							</div>
 						</form>
