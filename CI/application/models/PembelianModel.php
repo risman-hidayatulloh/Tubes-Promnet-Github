@@ -22,12 +22,7 @@
 		}
 
 		function search($name_part){
-<<<<<<< HEAD
-			return $this->db->query("SELECT parts.id_part,kode_part, nama_part, harga_ref_part, count(id_stok) as stok  from parts, href_parts, stok_parts WHERE parts.id_part = href_parts.id_part and parts.id_part = stok_parts.id_part AND nama_part LIKE '%".$name_part."%'");
-=======
-			// return $this->db->query("SELECT parts.id_part,kode_part, nama_part, harga_ref_part from parts, href_parts WHERE parts.id_part = href_parts.id_part AND nama_part LIKE '%".$name_part."%'");
-				return $this->db->query("SELECT parts.id_part,kode_part, nama_part, harga_ref_part, count(id_stok) as stok from parts, href_parts, stok_parts WHERE parts.id_part = href_parts.id_part and parts.id_part = stok_parts.id_part and parts.nama_part like '%".$name_part."%'  group by parts.id_part");
->>>>>>> 00ec71f49ea4b45eeb7e1d1c32b0935965d04240
+			return $this->db->query("SELECT parts.id_part,kode_part, nama_part, harga_ref_part, count(stok_parts.id_stok) as stok  from parts, href_parts, stok_parts WHERE parts.id_part = href_parts.id_part and parts.id_part = stok_parts.id_part AND nama_part LIKE '%".$name_part."%'");
 		}
 
 		function truncate(){
