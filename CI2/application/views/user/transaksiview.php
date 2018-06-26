@@ -22,7 +22,7 @@
 								<td><?php echo $item->waktu; ?></td>
 								<td><?php echo $item->bayar; ?></td>
 								<td><a href="<?php echo site_url('HomeUserController/detailTransaksi/'.$item->id_transaksi) ?>" class="btn btn-success">Detail</a>
-									<a href="<?php echo site_url('HomeUserController/deleteTransaksi/'.$item->id_transaksi) ?>" class="btn btn-danger">Delete</a>
+									<a href="<?php echo site_url('HomeUserController/deleteTransaksi/'.$item->id_transaksi) ?>" class="btn btn-danger">Cancel</a>
 								</td>
 								
 							</tr>
