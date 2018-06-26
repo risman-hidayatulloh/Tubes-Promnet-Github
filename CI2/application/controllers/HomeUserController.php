@@ -162,7 +162,8 @@
 
 			$this->TransaksiModel->cancelTransaksi($id);
 
-			$this->viewTransaksi();
+
+			redirect('HomeUserController/viewTransaksi');
 		}
 
 		public function unCancelTransaksi($id){
@@ -172,7 +173,7 @@
 
 			$this->TransaksiModel->unCancelTransaksi($id);
 
-			$this->viewTransaksi();
+			redirect('HomeUserController/viewTransaksi');
 		}
 
 		public function search(){

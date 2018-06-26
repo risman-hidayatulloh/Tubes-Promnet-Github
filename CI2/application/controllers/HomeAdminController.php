@@ -163,7 +163,8 @@
 			$this->TransaksiModel->acceptCancel($id);
 
 
-			$this->pengajuanTransaksi();
+			// $this->pengajuanTransaksi();
+			redirect('HomeAdminController/pengajuanTransaksi');
 		}
 
 		public function detailTransaksi($id){
@@ -183,7 +184,7 @@
 			$this->TransaksiModel->unAcceptCancel($id);
 
 
-			$this->pengajuanTransaksi();
+			redirect('HomeAdminController/pengajuanTransaksi');
 		}
 
 		public function logout(){
