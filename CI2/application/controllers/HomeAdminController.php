@@ -100,6 +100,18 @@
 
 		}
 
+		public function viewDataService(){
+			$this->cekUser();
+
+			$this->load->model('ServiceModel');
+
+			$data['data'] = $this->ServiceModel->getService()->result();
+
+			$this->index();
+			$this->load->view('admin/dataserviceview',$data);
+
+		}
+
 		public function viewDataServiceFiltered(){
 			$this->cekUser();
 
