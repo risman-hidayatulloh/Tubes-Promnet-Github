@@ -40,6 +40,10 @@
 			return $this->db->query('select detail_transaksi.id_transaksi, transaksis.kode_transaksi, parts.nama_part, href_parts.harga_ref_part, count(detail_transaksi.id_part) as jumlah from detail_transaksi,parts,href_parts,transaksis where transaksis.id_transaksi = detail_transaksi.id_transaksi and detail_transaksi.id_part = parts.id_part and parts.id_part = href_parts.id_part and detail_transaksi.id_transaksi ='.$id.' group by detail_transaksi.id_part');
 		}
 
+		function getTmpToTmp($id){
+			return $this->db->query('select detail_transaksi.id_part from detail_transaksi,transaksis where transaksis.id_transaksi = detail_transaksi.id_transaksi and detail_transaksi.id_transaksi = '.$id);
+		}
+
 		function cancelTransaksi($id){
 			$this->db->query('update transaksis set status = 0 where id_transaksi ='.$id);
 		}
