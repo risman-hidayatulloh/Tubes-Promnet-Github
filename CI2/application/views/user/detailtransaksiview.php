@@ -3,7 +3,7 @@
 	<div class="content">
 		<div class="women_main">
 			<div class="row">
-				<h2>Kode transaksi</h2>
+				<h2>Kode transaksi <?php echo $data[0]->kode_transaksi; ?></h2>
 				<table class="table table-hover">
 					<thead>
 						<tr>
