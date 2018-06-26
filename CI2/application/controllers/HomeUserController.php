@@ -268,6 +268,8 @@
 
 			$this->index();
 			$this->load->view('user/transaksiview',$data);
+			
+			// $this->load->view('user/detailtransaksiview',$data);
 		}
 
 		public function detailTransaksi($id){
