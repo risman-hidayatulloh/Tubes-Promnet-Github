@@ -270,6 +270,26 @@
 			$pdf->Output();
 		}
 
+		public function editTransaksi($id){
+			$this->cekUser();
+
+			$this->load->model('TransaksiModel');
+
+			$detail = $this->TransaksiModel->getTmpToTmp($id)->result();
+
+			$this->load->model('PembelianModel');
+
+			foreach($detail as $tmp){
+				$data = array(
+					'id_part' => $tmp->id_part
+				);
+
+				$this->PembelianModel->tambahTmp($data);
+			}
+
+			redirect('HomeUserController/viewPembayaran');
+		}
+
 		public function viewTransaksi(){
 			$this->cekUser();
 			$this->load->model('TransaksiModel');
