@@ -71,15 +71,32 @@
 
 		}
 
-		public function viewDataService(){
+		public function viewInputStok(){
 			$this->cekUser();
 
-			$this->load->model('ServiceModel');
-
-			$data['data'] = $this->ServiceModel->getService()->result();
-
+			$this->load->model('PartsModel');
+			$data['barang'] = $this->PartsModel->getData()->result();
 			$this->index();
-			$this->load->view('admin/dataserviceview',$data);
+			$this->load->view('admin/stokview', $data);
+
+		}
+
+		public function StokAction(){
+			$this->cekUser();
+
+			$stok = array(
+				'id_part' => $this->input->post('barang'),
+				'kode_seri' => $this->input->post('kodeseri'),
+				'status' => 1
+
+			);
+
+			$this->load->model('StokModel');
+			$this->StokModel->addStok($stok);
+
+			
+
+			$this->viewInputStok();
 
 		}
 
@@ -195,6 +212,7 @@
 			$this->session->set_userdata($userdata);
 			redirect('LoginController');
 		}
+
 	}
 
  ?>
