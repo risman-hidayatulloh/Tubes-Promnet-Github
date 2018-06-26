@@ -155,13 +155,24 @@
 
 		}
 
-		public function deleteTransaksi($id){
+		public function cancelTransaksi($id){
 			$this->cekUser();
 			
+			$this->load->model('TransaksiModel');
 
+			$this->TransaksiModel->cancelTransaksi($id);
 
+			$this->viewTransaksi();
+		}
 
-			$this->index();
+		public function unCancelTransaksi($id){
+			$this->cekUser();
+
+			$this->load->model('TransaksiModel');
+
+			$this->TransaksiModel->unCancelTransaksi($id);
+
+			$this->viewTransaksi();
 		}
 
 		public function search(){
@@ -268,7 +279,7 @@
 
 			$this->index();
 			$this->load->view('user/transaksiview',$data);
-		
+
 		}
 
 		public function detailTransaksi($id){

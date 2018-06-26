@@ -19,13 +19,24 @@
 			}
 		}
 
+		public function pengajuanTransaksi(){
+			$this->cekUser();
+
+			$this->load->model('TransaksiModel');
+
+			$data['data'] = $this->TransaksiModel->getAllTransaksi()->result();
+
+			$this->index();
+			$this->load->view('admin/pengajuantransaksiview',$data);
+		}
+
 		public function viewDataBayar(){
 			$this->cekUser();
 
 			//load model
 			$this->load->model('TransaksiModel');
 
-			$data['data'] = $this->TransaksiModel->getAllTransaksi()->result();
+			$data['data'] = $this->TransaksiModel->getAllDataTransaksi()->result();
 
 			$this->index();
 			$this->load->view('admin/datapembayaranview',$data);
@@ -143,6 +154,36 @@
 			//$this->load->view('global/header');
 			$this->load->view('admin/homeadmin');
 			$this->load->view('global/footer');
+		}
+
+		public function acceptPengajuan($id){
+			$this->cekUser();
+
+			$this->load->model('TransaksiModel');
+			$this->TransaksiModel->acceptCancel($id);
+
+
+			$this->pengajuanTransaksi();
+		}
+
+		public function detailTransaksi($id){
+			$this->cekUser();
+			$this->load->model('TransaksiModel');
+
+			$data['data'] = $this->TransaksiModel->getDetailTransaksi($id)->result();
+
+			$this->index();
+			$this->load->view('admin/detailtransaksiview',$data);
+		}
+
+		public function unAcceptPengajuan($id){
+			$this->cekUser();
+
+			$this->load->model('TransaksiModel');
+			$this->TransaksiModel->unAcceptCancel($id);
+
+
+			$this->pengajuanTransaksi();
 		}
 
 		public function logout(){

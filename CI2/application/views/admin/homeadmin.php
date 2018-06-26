@@ -18,6 +18,7 @@
 				<li><a href="<?php echo site_url('HomeAdminController/viewDataPembelian'); ?>"><i class="lnr lnr-chart-bars"></i> <span>Data Pembelian</span></a></li>
 				<li><a href="<?php echo site_url('HomeAdminController/viewDataService'); ?>"><i class="lnr lnr-book"></i> <span>Data Service</span></a></li>
 				<li><a href="<?php echo site_url('HomeAdminController/viewDataBayar'); ?>"><i class="lnr lnr-cart"></i> <span>Data Pembayaran</span></a></li>
+				<li><a href="<?php echo site_url('HomeAdminController/pengajuanTransaksi'); ?>"><i class="lnr lnr-cart"></i> <span>Transaksi</span></a></li>
 				<li><a href="<?php echo site_url('HomeAdminController/logOut'); ?>"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 			</ul>
 		</div>

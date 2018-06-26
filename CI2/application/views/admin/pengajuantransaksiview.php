@@ -22,15 +22,16 @@
 								<td><?php echo $item->kode_transaksi; ?></td>
 								<td><?php echo $item->waktu; ?></td>
 								<td><?php echo $item->bayar; ?></td>
-								<td><?php if($item->status == 0) echo "Canceling"; else if($item->status == 3) echo "Canceled"; ?></td>
-								<td><a href="<?php echo site_url('HomeUserController/detailTransaksi/'.$item->id_transaksi) ?>" class="btn btn-success">Detail</a>
-									<?php if($item->status == 1){ ?>
-									<a href="<?php echo site_url('HomeUserController/cancelTransaksi/'.$item->id_transaksi) ?>" class="btn btn-danger">Cancel</a>
-									<?php } ?>
-
+								<td><?php if($item->status == 0) echo "Canceling"; else if($item->status == 3) echo "Canceled";  ?></td>
+								<td><a href="<?php echo site_url('HomeAdminController/detailTransaksi/'.$item->id_transaksi) ?>" class="btn btn-success">Detail</a>
 									<?php if($item->status == 0){ ?>
-									<a href="<?php echo site_url('HomeUserController/unCancelTransaksi/'.$item->id_transaksi) ?>" class="btn btn-warning">Uncancel</a>
+									<a href="<?php echo site_url('HomeAdminController/acceptPengajuan/'.$item->id_transaksi) ?>" class="btn btn-warning">Accept</a>
 									<?php }	 ?>
+
+									<?php if($item->status == 3){ ?>
+									<a href="<?php echo site_url('HomeAdminController/unAcceptPengajuan/'.$item->id_transaksi) ?>" class="btn btn-danger">Unaccept</a>
+									<?php }	 ?>
+
 								</td>
 							</tr>
 						<?php $i++;} ?>

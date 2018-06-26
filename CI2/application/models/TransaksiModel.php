@@ -28,12 +28,32 @@
 			return $this->db->get();
 		}
 
+		function getAllDataTransaksi(){
+			return $this->db->query('select *from transaksis where status = 1');
+		}
+
 		function getFilterTransaksi($filter){
-			return $this->db->query('select *from transaksis group by '.$filter.'(waktu)');
+			return $this->db->query('select *from transaksis where status = 1 group by '.$filter.'(waktu)');
 		}
 
 		function getDetailTransaksi($id){
 			return $this->db->query('select detail_transaksi.id_transaksi, transaksis.kode_transaksi, parts.nama_part, href_parts.harga_ref_part, count(detail_transaksi.id_part) as jumlah from detail_transaksi,parts,href_parts,transaksis where transaksis.id_transaksi = detail_transaksi.id_transaksi and detail_transaksi.id_part = parts.id_part and parts.id_part = href_parts.id_part and detail_transaksi.id_transaksi ='.$id.' group by detail_transaksi.id_part');
+		}
+
+		function cancelTransaksi($id){
+			$this->db->query('update transaksis set status = 0 where id_transaksi ='.$id);
+		}
+
+		function unCancelTransaksi($id){
+			$this->db->query('update transaksis set status = 1 where id_transaksi ='.$id);
+		}
+
+		function acceptCancel($id){
+			$this->db->query('update transaksis set status = 3 where id_transaksi ='.$id);
+		}
+
+		function unAcceptCancel($id){
+			$this->db->query('update transaksis set status = 0 where id_transaksi ='.$id);
 		}
 
 	}
